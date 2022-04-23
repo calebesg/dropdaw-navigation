@@ -2,38 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <header class="l-header">
+    <nav>
+      <a href="/"><img src="./images/logo.svg" alt="Logo Snap"></a>
+      
+      <ul class="c-menu">
+        <li>
+          <a href="#">Features</a>
+          <ul class="c-dropdow__menu">
+            <li>
+              <a href="#">
+                <img src="./images/icon-todo.svg" alt="" aria-hidden="true">
+                Todo List
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./images/icon-calendar.svg" alt="" aria-hidden="true">
+                Calendar
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./images/icon-reminders.svg" alt="" aria-hidden="true">
+                Reminders
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./images/icon-planning.svg" alt="" aria-hidden="true">
+                Planning
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Company</a>
+          <ul class="c-dropdow__menu">
+            <li><a href="#">History</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
 
-  Features
-  Company
-  Careers
-  About
-
-  Login
-  Register
-
-  Make remote work
-
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
-
-  Learn more
+    <ul class="c-auth__area">
+      <li><a href="#">Login</a></li>
+      <li><a href="#">Register</a></li>
+    </ul>
+  </header>
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <main>
+    <!-- Make remote work
+  
+    Get your team in sync, no matter your location. Streamline processes, 
+    create team rituals, and watch productivity soar.
+  
+    Learn more -->
+  </main>
+
 </body>
 </html>
