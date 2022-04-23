@@ -1,0 +1,30 @@
+@use 'variables';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Epilogue', sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+  min-height: 100vh;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: variables.$gray-400;
+  text-decoration: none;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    color: variables.$black-800;
+  }
+}

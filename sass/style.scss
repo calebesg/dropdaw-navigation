@@ -1,1 +1,74 @@
-@use 'reset';
+@use 'global';
+@use 'mixins';
+@use 'variables';
+
+$header: '.l-header';
+
+#{$header} {
+  .c-navbar {
+    @include mixins.center;
+    justify-content: space-between;
+    width: min(85rem, 90%);
+    margin: 0 auto;
+    margin-top: 0.9375rem;
+    gap: 3rem;
+
+    .c-menu {
+      flex: 1 1 auto;
+      display: flex;
+      align-items: center;
+      height: 3.125rem;
+      gap: 2rem;
+
+      .dropdown {
+        position: relative;
+        margin-right: 1rem;
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        &::after {
+          content: url(../images/icon-arrow-down.svg);
+          position: absolute;
+          right: -1rem;
+        }
+
+        .c-dropdown__menu {
+          @include mixins.dropdown;
+          max-height: 0;
+          opacity: 0;
+          transition: all 0.4s;
+
+          .c-menu__link {
+            @include mixins.center;
+            width: max-content;
+            gap: 1rem;
+          }
+        }
+
+        .c-dropdown__menu.left {
+          left: 0;
+        }
+        .c-dropdown__menu.right {
+          right: -1.25rem;
+        }
+
+        &:hover {
+          &::after {
+            content: url(../images/icon-arrow-up.svg);
+          }
+          .c-dropdown__menu {
+            padding: 1.5rem;
+            max-height: 20rem;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .c-auth__area {
+      display: flex;
+      gap: 2rem;
+    }
+  }
+}
