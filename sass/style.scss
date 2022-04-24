@@ -3,15 +3,38 @@
 @use 'variables';
 
 $header: '.l-header';
+$menuMobile: '.c-dropdown__menu';
+$overlay: '.c-overlay';
 
 #{$header} {
+  padding-top: 0.9375rem;
+
   .c-navbar {
     @include mixins.center;
     justify-content: space-between;
     width: min(85rem, 90%);
     margin: 0 auto;
-    margin-top: 0.9375rem;
     gap: 3rem;
+
+    .btn__menu {
+      display: none;
+      background: url(../images/icon-menu.svg) center no-repeat;
+      border: none;
+      cursor: pointer;
+      height: 26px;
+      position: relative;
+      width: 26px;
+      transition: all 0.3s ease-out;
+      z-index: 20;
+
+      @include mixins.mobile {
+        display: block;
+      }
+
+      &.close {
+        background: url(../images/icon-close-menu.svg) center no-repeat;
+      }
+    }
 
     .c-menu {
       flex: 1 1 auto;
@@ -19,6 +42,10 @@ $header: '.l-header';
       align-items: center;
       height: 3.125rem;
       gap: 2rem;
+
+      @include mixins.mobile {
+        display: none;
+      }
 
       .dropdown {
         position: relative;
@@ -37,7 +64,7 @@ $header: '.l-header';
           @include mixins.dropdown;
           max-height: 0;
           opacity: 0;
-          transition: all 0.4s;
+          transition: all 0.3s ease-in-out 0.2s;
 
           .c-menu__link {
             @include mixins.center;
@@ -67,8 +94,69 @@ $header: '.l-header';
     }
 
     .c-auth__area {
-      display: flex;
+      @include mixins.center;
       gap: 2rem;
+
+      @include mixins.mobile {
+        display: none;
+      }
+
+      .btn {
+        @include mixins.center;
+        border: 1px solid variables.$gray-400;
+        border-radius: 10px;
+        height: 40px;
+        width: 100px;
+
+        &:hover {
+          border-color: variables.$black-800;
+        }
+      }
     }
+  }
+}
+
+#{$menuMobile} {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  position: fixed;
+  background-color: white;
+  padding: 80px 24px;
+  inset: 0;
+  left: 30%;
+  transition: all 0.4s ease-out;
+  z-index: 10;
+
+  &.hidden {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  .c-dropdown__submenu {
+    padding: 1.5rem;
+
+    &--item {
+      &:not(:last-of-type) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+#{$overlay} {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all 0.4s;
+  opacity: 1;
+  z-index: -1;
+
+  &.hidden {
+    // height: 0;
+    opacity: 0;
   }
 }

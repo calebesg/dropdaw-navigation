@@ -26,6 +26,9 @@ a:hover {
   color: #141414;
 }
 
+.l-header {
+  padding-top: 0.9375rem;
+}
 .l-header .c-navbar {
   display: flex;
   justify-content: center;
@@ -33,8 +36,26 @@ a:hover {
   justify-content: space-between;
   width: min(85rem, 90%);
   margin: 0 auto;
-  margin-top: 0.9375rem;
   gap: 3rem;
+}
+.l-header .c-navbar .btn__menu {
+  display: none;
+  background: url(../images/icon-menu.svg) center no-repeat;
+  border: none;
+  cursor: pointer;
+  height: 26px;
+  position: relative;
+  width: 26px;
+  transition: all 0.3s ease-out;
+  z-index: 20;
+}
+@media (max-width: 900px) {
+  .l-header .c-navbar .btn__menu {
+    display: block;
+  }
+}
+.l-header .c-navbar .btn__menu.close {
+  background: url(../images/icon-close-menu.svg) center no-repeat;
 }
 .l-header .c-navbar .c-menu {
   flex: 1 1 auto;
@@ -42,6 +63,11 @@ a:hover {
   align-items: center;
   height: 3.125rem;
   gap: 2rem;
+}
+@media (max-width: 900px) {
+  .l-header .c-navbar .c-menu {
+    display: none;
+  }
 }
 .l-header .c-navbar .c-menu .dropdown {
   position: relative;
@@ -68,7 +94,7 @@ a:hover {
   overflow: hidden;
   max-height: 0;
   opacity: 0;
-  transition: all 0.4s;
+  transition: all 0.3s ease-in-out 0.2s;
 }
 .l-header .c-navbar .c-menu .dropdown .c-dropdown__menu .c-menu__link {
   display: flex;
@@ -93,7 +119,64 @@ a:hover {
 }
 .l-header .c-navbar .c-auth__area {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
+}
+@media (max-width: 900px) {
+  .l-header .c-navbar .c-auth__area {
+    display: none;
+  }
+}
+.l-header .c-navbar .c-auth__area .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid dimgray;
+  border-radius: 10px;
+  height: 40px;
+  width: 100px;
+}
+.l-header .c-navbar .c-auth__area .btn:hover {
+  border-color: #141414;
+}
+
+.c-dropdown__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  position: fixed;
+  background-color: white;
+  padding: 80px 24px;
+  inset: 0;
+  left: 30%;
+  transition: all 0.4s ease-out;
+  z-index: 10;
+}
+.c-dropdown__menu.hidden {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.c-dropdown__menu .c-dropdown__submenu {
+  padding: 1.5rem;
+}
+.c-dropdown__menu .c-dropdown__submenu--item:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+.c-overlay {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all 0.4s;
+  opacity: 1;
+  z-index: -1;
+}
+.c-overlay.hidden {
+  opacity: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

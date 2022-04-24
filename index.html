@@ -16,6 +16,7 @@
     <nav class="c-navbar">
       <a href="/"><img src="./images/logo.svg" alt="Logo Snap"></a>
 
+      <button class="btn__menu" aria-label="Open menu"></button>
       <ul class="c-menu">
         <li class="c-menu__item dropdown">
           <a href="#">Features</a>
@@ -70,7 +71,7 @@
       
       <ul class="c-auth__area">
         <li><a href="#">Login</a></li>
-        <li><a href="#">Register</a></li>
+        <li><a class="btn" href="#">Register</a></li>
       </ul>
     </nav>
   </header>
@@ -84,5 +85,60 @@
     Learn more -->
   </main>
 
+  <!-- MOBILE MENU -->
+  <ul class="c-dropdown__menu hidden">
+    <li class="c-dropdown__menu--item">
+      <a href="#">Features</a>
+      <ul class="c-dropdown__submenu">
+        <li class="c-dropdown__submenu--item">
+          <a class="c-dropdown__submenu--link" href="#">
+            <img src="./images/icon-todo.svg" alt="" aria-hidden="true">
+            Todo List
+          </a>
+        </li>
+        <li class="c-dropdown__submenu--item">
+          <a class="c-dropdown__submenu--link" href="#">
+            <img src="./images/icon-calendar.svg" alt="" aria-hidden="true">
+            Calendar
+          </a>
+        </li>
+        <li class="c-dropdown__submenu--item">
+          <a class="c-dropdown__submenu--link" href="#">
+            <img src="./images/icon-reminders.svg" alt="" aria-hidden="true">
+            Reminders
+          </a>
+        </li>
+        <li class="c-dropdown__submenu--item">
+          <a class="c-dropdown__submenu--link" href="#">
+            <img src="./images/icon-planning.svg" alt="" aria-hidden="true">
+            Planning
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="c-dropdown__menu--item">
+      <a href="#">Company</a>
+      <ul class="c-dropdown__submenu">
+        <li class="c-dropdown__submenu--item">
+          <a class="c-dropdown__submenu--link" href="#">History</a>
+        </li>
+        <li class="c-dropdown__submenu--item">
+          <a class="c-dropdown__submenu--link" href="#">Our Team</a>
+        </li>
+        <li class="c-dropdown__submenu--item">
+          <a class="c-dropdown__submenu--link" href="#">Blog</a>
+        </li>
+      </ul>
+    </li>
+    <li class="c-dropdown__menu--item">
+      <a class="c-dropdown__menu--link" href="#">Careers</a>
+    </li>
+    <li class="c-dropdown__menu--item">
+      <a class="c-dropdown__menu--link" href="#">About</a>
+    </li>
+  </ul>
+  <div class="c-overlay hidden"></div>
+
+  <script src="./script.js"></script>
 </body>
 </html>
