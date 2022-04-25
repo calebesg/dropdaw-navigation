@@ -153,11 +153,10 @@ $content: '.c-content';
   background-color: rgba(0, 0, 0, 0.6);
   transition: all 0.4s;
   opacity: 1;
-  z-index: -1;
+  animation: show 0.4s;
 
   &.hidden {
-    // height: 0;
-    opacity: 0;
+    display: none;
   }
 }
 
@@ -269,5 +268,14 @@ $content: '.c-content';
       background: url(../images/image-hero-mobile.png) no-repeat;
       background-size: contain;
     }
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
