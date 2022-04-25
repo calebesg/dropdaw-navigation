@@ -169,6 +169,13 @@ $content: '.c-content';
   max-width: 71.5rem;
   margin: 4rem auto 0;
 
+  @include mixins.mobile {
+    margin-top: 2rem;
+    grid-template-areas: 'a' 'b';
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
   #{$content} {
     width: 90%;
     display: flex;
@@ -176,9 +183,20 @@ $content: '.c-content';
     justify-content: center;
     align-items: flex-start;
 
+    @include mixins.mobile {
+      margin-top: 2rem;
+      text-align: center;
+      width: 100%;
+      align-items: center;
+    }
+
     &--title {
       font-weight: 700;
       font-size: 4.8rem;
+
+      @include mixins.mobile {
+        font-size: 2.25rem;
+      }
     }
 
     &--description {
@@ -187,6 +205,11 @@ $content: '.c-content';
       color: variables.$gray-400;
       line-height: 1.75rem;
       width: 90%;
+
+      @include mixins.mobile {
+        margin-top: 2rem;
+        font-size: 1rem;
+      }
     }
 
     &--more {
@@ -199,6 +222,10 @@ $content: '.c-content';
       color: white;
       font-weight: bold;
       cursor: pointer;
+
+      @include mixins.mobile {
+        margin-top: 2rem;
+      }
     }
   }
 
@@ -206,5 +233,12 @@ $content: '.c-content';
     background: url(../images/image-hero-desktop.png) no-repeat;
     background-size: contain;
     background-position: right;
+
+    @include mixins.mobile {
+      grid-area: a;
+      height: 80vw;
+      background: url(../images/image-hero-mobile.png) no-repeat;
+      background-size: contain;
+    }
   }
 }
