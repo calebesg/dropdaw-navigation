@@ -179,4 +179,46 @@ a:hover {
   opacity: 0;
 }
 
+.l-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 74vh;
+  max-width: 71.5rem;
+  margin: 4rem auto 0;
+}
+.l-main .c-content {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.l-main .c-content--title {
+  font-weight: 700;
+  font-size: 4.8rem;
+}
+.l-main .c-content--description {
+  margin-top: 4.125rem;
+  font-size: 1.125rem;
+  color: dimgray;
+  line-height: 1.75rem;
+  width: 90%;
+}
+.l-main .c-content--more {
+  margin-top: 4.125rem;
+  height: 3.5rem;
+  width: 10.25rem;
+  background-color: #141414;
+  border-radius: 0.625rem;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.l-main .c-image__wrap {
+  background: url(../images/image-hero-desktop.png) no-repeat;
+  background-size: contain;
+  background-position: right;
+}
+
 /*# sourceMappingURL=style.css.map */
