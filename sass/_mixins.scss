@@ -17,10 +17,17 @@
   flex-direction: column;
   gap: 1rem;
   overflow: hidden;
+  z-index: 10;
+}
+
+@mixin sm-desktop {
+  @media (max-height: 700px) {
+    @content;
+  }
 }
 
 @mixin mobile {
-  @media (max-width: 900px) {
+  @media (max-width: 56.25rem) {
     @content;
   }
 }

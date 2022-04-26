@@ -199,7 +199,7 @@ $content: '.c-content';
 .l-main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 74vh;
+  grid-template-rows: min(74vh, 50rem);
   max-width: 71.5rem;
   margin: 4rem auto 0;
 
@@ -218,6 +218,10 @@ $content: '.c-content';
     justify-content: center;
     align-items: flex-start;
 
+    @include mixins.sm-desktop {
+      width: 75%;
+    }
+
     @include mixins.mobile {
       margin-top: 2rem;
       text-align: center;
@@ -228,6 +232,10 @@ $content: '.c-content';
     &--title {
       font-weight: 700;
       font-size: 4.8rem;
+
+      @include mixins.sm-desktop {
+        font-size: 4rem;
+      }
 
       @include mixins.mobile {
         font-size: 2.25rem;
@@ -240,6 +248,11 @@ $content: '.c-content';
       color: variables.$gray-400;
       line-height: 1.75rem;
       width: 90%;
+
+      @include mixins.sm-desktop {
+        margin-top: 2rem;
+        font-size: 1rem;
+      }
 
       @include mixins.mobile {
         margin-top: 2rem;
@@ -258,6 +271,10 @@ $content: '.c-content';
       font-weight: bold;
       cursor: pointer;
       transition: all 0.6s;
+
+      @include mixins.sm-desktop {
+        margin-top: 2rem;
+      }
 
       @include mixins.mobile {
         margin-top: 2rem;
