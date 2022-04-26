@@ -22,10 +22,10 @@ $content: '.c-content';
       background: url(../images/icon-menu.svg) center no-repeat;
       border: none;
       cursor: pointer;
-      height: 26px;
+      height: 1.625rem;
       position: relative;
-      width: 26px;
-      transition: all 0.3s ease-out;
+      width: 1.625rem;
+      transition: all 0.2s ease-out;
       z-index: 20;
 
       @include mixins.mobile {
@@ -33,6 +33,8 @@ $content: '.c-content';
       }
 
       &.close {
+        position: fixed;
+        right: 1.125rem;
         background: url(../images/icon-close-menu.svg) center no-repeat;
       }
     }
@@ -123,7 +125,7 @@ $content: '.c-content';
   gap: 1rem;
   position: fixed;
   background-color: white;
-  padding: 80px 24px;
+  padding: 5rem 1.5rem;
   inset: 0;
   left: 30%;
   transition: all 0.4s ease-out;
@@ -134,14 +136,48 @@ $content: '.c-content';
     opacity: 0;
   }
 
-  .c-dropdown__submenu {
-    padding: 1.5rem;
+  &--item {
+    position: relative;
 
-    &--item {
-      &:not(:last-of-type) {
-        margin-bottom: 1rem;
+    &:not(:nth-of-type(1n + 3)) {
+      #{$menuMobile}--link {
+        &::after {
+          content: url(../images/icon-arrow-down.svg);
+          margin-left: 0.625rem;
+        }
+      }
+
+      .c-dropdown__submenu {
+        max-height: 0;
+        opacity: 0;
+        transition: all 0.3s ease-out 0.2s;
+
+        &--item {
+          &:not(:last-of-type) {
+            margin-bottom: 1rem;
+          }
+        }
+      }
+
+      &:hover {
+        #{$menuMobile}--link {
+          &::after {
+            content: url(../images/icon-arrow-up.svg);
+            margin-left: 10px;
+          }
+        }
+
+        .c-dropdown__submenu {
+          padding: 1.5rem;
+          max-height: 10rem;
+          opacity: 1;
+        }
       }
     }
+  }
+
+  &--link {
+    font-weight: 700;
   }
 }
 

@@ -43,10 +43,10 @@ a:hover {
   background: url(../images/icon-menu.svg) center no-repeat;
   border: none;
   cursor: pointer;
-  height: 26px;
+  height: 1.625rem;
   position: relative;
-  width: 26px;
-  transition: all 0.3s ease-out;
+  width: 1.625rem;
+  transition: all 0.2s ease-out;
   z-index: 20;
 }
 @media (max-width: 900px) {
@@ -55,6 +55,8 @@ a:hover {
   }
 }
 .l-header .c-navbar .btn__menu.close {
+  position: fixed;
+  right: 1.125rem;
   background: url(../images/icon-close-menu.svg) center no-repeat;
 }
 .l-header .c-navbar .c-menu {
@@ -147,7 +149,7 @@ a:hover {
   gap: 1rem;
   position: fixed;
   background-color: white;
-  padding: 80px 24px;
+  padding: 5rem 1.5rem;
   inset: 0;
   left: 30%;
   transition: all 0.4s ease-out;
@@ -157,11 +159,32 @@ a:hover {
   transform: translateX(100%);
   opacity: 0;
 }
-.c-dropdown__menu .c-dropdown__submenu {
-  padding: 1.5rem;
+.c-dropdown__menu--item {
+  position: relative;
 }
-.c-dropdown__menu .c-dropdown__submenu--item:not(:last-of-type) {
+.c-dropdown__menu--item:not(:nth-of-type(1n + 3)) .c-dropdown__menu--link::after {
+  content: url(../images/icon-arrow-down.svg);
+  margin-left: 0.625rem;
+}
+.c-dropdown__menu--item:not(:nth-of-type(1n + 3)) .c-dropdown__submenu {
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.3s ease-out 0.2s;
+}
+.c-dropdown__menu--item:not(:nth-of-type(1n + 3)) .c-dropdown__submenu--item:not(:last-of-type) {
   margin-bottom: 1rem;
+}
+.c-dropdown__menu--item:not(:nth-of-type(1n + 3)):hover .c-dropdown__menu--link::after {
+  content: url(../images/icon-arrow-up.svg);
+  margin-left: 10px;
+}
+.c-dropdown__menu--item:not(:nth-of-type(1n + 3)):hover .c-dropdown__submenu {
+  padding: 1.5rem;
+  max-height: 10rem;
+  opacity: 1;
+}
+.c-dropdown__menu--link {
+  font-weight: 700;
 }
 
 .c-overlay {
