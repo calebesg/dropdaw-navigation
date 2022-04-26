@@ -201,9 +201,11 @@ $content: '.c-content';
   grid-template-columns: 1fr 1fr;
   grid-template-rows: min(74vh, 50rem);
   max-width: 71.5rem;
+  width: 90%;
   margin: 4rem auto 0;
 
   @include mixins.mobile {
+    width: 100%;
     margin-top: 2rem;
     grid-template-areas: 'a' 'b';
     grid-template-columns: 1fr;
@@ -298,6 +300,7 @@ $content: '.c-content';
       @include mixins.mobile {
         width: 90%;
         position: static;
+        justify-content: center;
         margin: 3rem 0 5rem;
         gap: 1.75rem;
       }
