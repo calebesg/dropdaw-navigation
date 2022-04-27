@@ -1,11 +1,9 @@
 'use strict';
 
-const btnMenu = document.querySelector('.btn__menu');
-const menuMobile = [...document.querySelectorAll('.c-dropdown__menu')].at(-1);
-const overlay = document.querySelector('.c-overlay');
+const btnMenu = document.querySelector('.c-menu__btn');
+const menu = document.querySelector('.c-menu');
 
 btnMenu.addEventListener('click', () => {
-  btnMenu.classList.toggle('close');
-  overlay.classList.toggle('hidden');
-  menuMobile.classList.toggle('hidden');
+  btnMenu.classList.toggle('c-menu__btn--close');
+  menu.classList.toggle('is-visible');
 });
