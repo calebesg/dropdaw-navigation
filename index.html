@@ -1,164 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <title>Frontend Mentor | Intro section with dropdown navigation</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/style.css">
-</head>
-<body>
-  <header class="l-header">
-    <nav class="c-navbar">
-      <a href="/"><img src="./images/logo.svg" alt="Logo Snap"></a>
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="c-navbar">
+        <a class="c-navbar__brand" href="/">
+          <img src="./images/logo.svg" alt="Logo Snap" />
+        </a>
 
-      <button class="btn__menu" aria-label="Open menu"></button>
-      <ul class="c-menu">
-        <li class="c-menu__item dropdown">
-          <a href="#">Features</a>
-          <ul class="c-dropdown__main right">
-            <li>
-              <a class="c-menu__link" href="#">
-                <img src="./images/icon-todo.svg" alt="" aria-hidden="true">
-                Todo List
-              </a>
-            </li>
-            <li>
-              <a class="c-menu__link" href="#">
-                <img src="./images/icon-calendar.svg" alt="" aria-hidden="true">
-                Calendar
-              </a>
-            </li>
-            <li>
-              <a class="c-menu__link" href="#">
-                <img src="./images/icon-reminders.svg" alt="" aria-hidden="true">
-                Reminders
-              </a>
-            </li>
-            <li>
-              <a class="c-menu__link" href="#">
-                <img src="./images/icon-planning.svg" alt="" aria-hidden="true">
-                Planning
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="c-menu__item dropdown">
-          <a href="#">Company</a>
-          <ul class="c-dropdown__main left">
-            <li>
-              <a class="c-menu__link" href="#">History</a>
-            </li>
-            <li>
-              <a class="c-menu__link" href="#">Our Team</a>
-            </li>
-            <li>
-              <a class="c-menu__link" href="#">Blog</a>
-            </li>
-          </ul>
-        </li>
-        <li class="c-menu__item">
-          <a href="#">Careers</a>
-        </li>
-        <li class="c-menu__item">
-          <a href="#">About</a>
-        </li>
-      </ul>
-      
-      <ul class="c-auth__area">
-        <li><a href="#">Login</a></li>
-        <li><a class="btn" href="#">Register</a></li>
-      </ul>
-    </nav>
+        <!-- c-menu__btn--close -->
+        <button class="c-menu__btn" aria-label="Open menu"></button>
+        <ul class="c-menu">
+          <li class="c-menu__item">
+            <a class="c-menu__link" href="#">Features</a>
+            <ul class="c-menu__submenu c-menu__submenu--left">
+              <li class="c-menu__submenu__item">
+                <a class="c-menu__link" href="#">
+                  <img
+                    class="c-menu__submenu__icon"
+                    src="./images/icon-todo.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  Todo List
+                </a>
+              </li>
+              <li class="c-menu__submenu__item">
+                <a class="c-menu__link" href="#">
+                  <img
+                    class="c-menu__submenu__icon"
+                    src="./images/icon-calendar.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  Calendar
+                </a>
+              </li>
+              <li class="c-menu__submenu__item">
+                <a class="c-menu__link" href="#">
+                  <img
+                    class="c-menu__submenu__icon"
+                    src="./images/icon-reminders.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  Reminders
+                </a>
+              </li>
+              <li class="c-menu__submenu__item">
+                <a class="c-menu__link" href="#">
+                  <img
+                    class="c-menu__submenu__icon"
+                    src="./images/icon-planning.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  Planning
+                </a>
+              </li>
+            </ul>
+          </li>
 
-    <!-- MOBILE MENU -->
-    <div class="mobile__menu">
-      <ul class="c-dropdown__menu hidden">
-        <li class="c-dropdown__menu--item">
-          <a class="c-dropdown__menu--link" href="#">Features</a>
-          <ul class="c-dropdown__submenu">
-            <li class="c-dropdown__submenu--item">
-              <a class="c-dropdown__submenu--link" href="#">
-                <img src="./images/icon-todo.svg" alt="" aria-hidden="true">
-                Todo List
-              </a>
-            </li>
-            <li class="c-dropdown__submenu--item">
-              <a class="c-dropdown__submenu--link" href="#">
-                <img src="./images/icon-calendar.svg" alt="" aria-hidden="true">
-                Calendar
-              </a>
-            </li>
-            <li class="c-dropdown__submenu--item">
-              <a class="c-dropdown__submenu--link" href="#">
-                <img src="./images/icon-reminders.svg" alt="" aria-hidden="true">
-                Reminders
-              </a>
-            </li>
-            <li class="c-dropdown__submenu--item">
-              <a class="c-dropdown__submenu--link" href="#">
-                <img src="./images/icon-planning.svg" alt="" aria-hidden="true">
-                Planning
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="c-dropdown__menu--item">
-          <a class="c-dropdown__menu--link" href="#">Company</a>
-          <ul class="c-dropdown__submenu">
-            <li class="c-dropdown__submenu--item">
-              <a class="c-dropdown__submenu--link" href="#">History</a>
-            </li>
-            <li class="c-dropdown__submenu--item">
-              <a class="c-dropdown__submenu--link" href="#">Our Team</a>
-            </li>
-            <li class="c-dropdown__submenu--item">
-              <a class="c-dropdown__submenu--link" href="#">Blog</a>
-            </li>
-          </ul>
-        </li>
-        <li class="c-dropdown__menu--item">
-          <a class="c-dropdown__menu--link" href="#">Careers</a>
-        </li>
-        <li class="c-dropdown__menu--item">
-          <a class="c-dropdown__menu--link" href="#">About</a>
-        </li>
-      </ul>
-      <div class="c-overlay hidden"></div>
-    </div>
-  </header>
+          <li class="c-menu__item">
+            <a class="c-menu__link" href="#">Company</a>
+            <ul class="c-menu__submenu">
+              <li class="c-menu__submenu__item">
+                <a class="c-menu__link" href="#">History</a>
+              </li>
+              <li class="c-menu__submenu__item">
+                <a class="c-menu__link" href="#">Our Team</a>
+              </li>
+              <li class="c-menu__submenu__item">
+                <a class="c-menu__link" href="#">Blog</a>
+              </li>
+            </ul>
+          </li>
 
-  <main class="l-main">
-    <div class="c-content">
-      <h1 class="c-content--title">Make remote work</h1>
-      <p class="c-content--description">
-        Get your team in sync, no matter your location. Streamline processes,
-        create team rituals, and watch productivity soar.
-      </p>
-      <button class="c-content--more">Learn more</button>
+          <li class="c-menu__item">
+            <a class="c-menu__link" href="#">Careers</a>
+          </li>
 
-      <ul class="c-content__colab">
-        <li class="c-content__colab--item">
-          <img src="./images/client-databiz.svg" alt="logo databiz">
-        </li>
-        <li class="c-content__colab--item">
-          <img src="./images/client-audiophile.svg" alt="logo audiophile">
-        </li>
-        <li class="c-content__colab--item">
-          <img src="./images/client-meet.svg" alt="logo meet">
-        </li>
-        <li class="c-content__colab--item">
-          <img src="./images/client-maker.svg" alt="logo marker">
-        </li>
-      </ul>
-    </div>
-    <div class="c-image__wrap"></div>
-  </main>
+          <li class="c-menu__item">
+            <a class="c-menu__link" href="#">About</a>
+          </li>
+        </ul>
 
-  <script src="./script.js"></script>
-</body>
+        <ul class="c-auth__area">
+          <li><a href="#">Login</a></li>
+          <li><a class="btn" href="#">Register</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="l-main">
+      <div class="c-content">
+        <h1 class="c-content--title">Make remote work</h1>
+        <p class="c-content--description">
+          Get your team in sync, no matter your location. Streamline processes,
+          create team rituals, and watch productivity soar.
+        </p>
+        <button class="c-content--more">Learn more</button>
+
+        <ul class="c-content__colab">
+          <li class="c-content__colab--item">
+            <img src="./images/client-databiz.svg" alt="logo databiz" />
+          </li>
+          <li class="c-content__colab--item">
+            <img src="./images/client-audiophile.svg" alt="logo audiophile" />
+          </li>
+          <li class="c-content__colab--item">
+            <img src="./images/client-meet.svg" alt="logo meet" />
+          </li>
+          <li class="c-content__colab--item">
+            <img src="./images/client-maker.svg" alt="logo marker" />
+          </li>
+        </ul>
+      </div>
+      <div class="c-image__wrap"></div>
+    </main>
+  </body>
 </html>
