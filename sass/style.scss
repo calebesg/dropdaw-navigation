@@ -3,8 +3,8 @@
 @use 'variables';
 
 $menu: '.c-menu';
-$menuMobile: '.c-dropdown__menu';
 $content: '.c-content';
+$arrow: '.c-menu__link__arrow';
 
 .c-navbar {
   padding: 1rem 2rem;
@@ -78,19 +78,29 @@ $content: '.c-content';
     &:hover {
       #{$menu}__submenu {
         display: block;
+        max-height: 12rem;
+        padding: 1.5rem;
+
+        @include mixins.mobile {
+          padding: 1rem;
+        }
+      }
+
+      #{$arrow}::before {
+        content: url(../images/icon-arrow-up.svg);
       }
     }
 
     #{$menu}__submenu {
       @include mixins.submenu;
-      animation: fade 0.4s ease;
-      display: none;
+      max-height: 0;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      transition: all 0.3s ease 0.2s;
 
       @include mixins.mobile {
-        margin-top: 1rem;
         position: static;
-        padding: 0;
-        margin-left: 1rem;
         box-shadow: none;
       }
 
@@ -109,6 +119,21 @@ $content: '.c-content';
       &__icon {
         margin-right: 0.5rem;
       }
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    &__arrow {
+      padding-right: 1rem;
+    }
+
+    &__arrow::before {
+      content: url(../images/icon-arrow-down.svg);
+      position: absolute;
+      right: 0;
+      top: -2px;
     }
   }
 }
@@ -136,57 +161,6 @@ $content: '.c-content';
     &:hover {
       border-color: variables.$black-800;
     }
-  }
-}
-
-#{$menuMobile} {
-  &.hidden {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-
-  &--item {
-    position: relative;
-
-    &:not(:nth-of-type(1n + 3)) {
-      #{$menuMobile}--link {
-        &::after {
-          content: url(../images/icon-arrow-down.svg);
-          margin-left: 0.625rem;
-        }
-      }
-
-      .c-dropdown__submenu {
-        max-height: 0;
-        opacity: 0;
-        transition: all 0.3s ease-out 0.2s;
-
-        &--item {
-          &:not(:last-of-type) {
-            margin-bottom: 1rem;
-          }
-        }
-      }
-
-      &:hover {
-        #{$menuMobile}--link {
-          &::after {
-            content: url(../images/icon-arrow-up.svg);
-            margin-left: 10px;
-          }
-        }
-
-        .c-dropdown__submenu {
-          padding: 1.5rem;
-          max-height: 10rem;
-          opacity: 1;
-        }
-      }
-    }
-  }
-
-  &--link {
-    font-weight: 700;
   }
 }
 
@@ -318,16 +292,5 @@ $content: '.c-content';
       background: url(../images/image-hero-mobile.png) no-repeat;
       background-size: contain;
     }
-  }
-}
-
-@keyframes fade {
-  from {
-    opacity: 0;
-    transform: rotateX(-90deg);
-  }
-  to {
-    opacity: 1;
-    transform: rotateX(0);
   }
 }

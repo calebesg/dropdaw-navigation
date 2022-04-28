@@ -104,6 +104,16 @@ a:hover {
 }
 .c-menu__item:hover .c-menu__submenu {
   display: block;
+  max-height: 12rem;
+  padding: 1.5rem;
+}
+@media (max-width: 56.25rem) {
+  .c-menu__item:hover .c-menu__submenu {
+    padding: 1rem;
+  }
+}
+.c-menu__item:hover .c-menu__link__arrow::before {
+  content: url(../images/icon-arrow-up.svg);
 }
 .c-menu__item .c-menu__submenu {
   position: absolute;
@@ -113,15 +123,15 @@ a:hover {
   background-color: white;
   box-shadow: 0 1rem 2rem rgba(105, 105, 105, 0.2);
   z-index: 10;
-  animation: fade 0.4s ease;
-  display: none;
+  max-height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  transition: all 0.3s ease 0.2s;
 }
 @media (max-width: 56.25rem) {
   .c-menu__item .c-menu__submenu {
-    margin-top: 1rem;
     position: static;
-    padding: 0;
-    margin-left: 1rem;
     box-shadow: none;
   }
 }
@@ -136,6 +146,18 @@ a:hover {
 }
 .c-menu__item .c-menu__submenu__icon {
   margin-right: 0.5rem;
+}
+.c-menu__link {
+  position: relative;
+}
+.c-menu__link__arrow {
+  padding-right: 1rem;
+}
+.c-menu__link__arrow::before {
+  content: url(../images/icon-arrow-down.svg);
+  position: absolute;
+  right: 0;
+  top: -2px;
 }
 
 .c-menu.is-visible {
@@ -165,38 +187,6 @@ a:hover {
 }
 .c-auth__area .btn:hover {
   border-color: #141414;
-}
-
-.c-dropdown__menu.hidden {
-  transform: translateX(100%);
-  opacity: 0;
-}
-.c-dropdown__menu--item {
-  position: relative;
-}
-.c-dropdown__menu--item:not(:nth-of-type(1n + 3)) .c-dropdown__menu--link::after {
-  content: url(../images/icon-arrow-down.svg);
-  margin-left: 0.625rem;
-}
-.c-dropdown__menu--item:not(:nth-of-type(1n + 3)) .c-dropdown__submenu {
-  max-height: 0;
-  opacity: 0;
-  transition: all 0.3s ease-out 0.2s;
-}
-.c-dropdown__menu--item:not(:nth-of-type(1n + 3)) .c-dropdown__submenu--item:not(:last-of-type) {
-  margin-bottom: 1rem;
-}
-.c-dropdown__menu--item:not(:nth-of-type(1n + 3)):hover .c-dropdown__menu--link::after {
-  content: url(../images/icon-arrow-up.svg);
-  margin-left: 10px;
-}
-.c-dropdown__menu--item:not(:nth-of-type(1n + 3)):hover .c-dropdown__submenu {
-  padding: 1.5rem;
-  max-height: 10rem;
-  opacity: 1;
-}
-.c-dropdown__menu--link {
-  font-weight: 700;
 }
 
 .l-main {
@@ -328,17 +318,6 @@ a:hover {
     height: 80vw;
     background: url(../images/image-hero-mobile.png) no-repeat;
     background-size: contain;
-  }
-}
-
-@keyframes fade {
-  from {
-    opacity: 0;
-    transform: rotateX(-90deg);
-  }
-  to {
-    opacity: 1;
-    transform: rotateX(0);
   }
 }
 
