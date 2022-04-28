@@ -29,4 +29,6 @@ Snap landing page was created to solve a layout challenge in [Frontend Mentor](h
 - **CSS** - Cascading Style Sheet
   - FlexBox
   - Grid
+  - Namespaces
 - **SASS** - css pre-processor
+- **BEM** - naming pattern
