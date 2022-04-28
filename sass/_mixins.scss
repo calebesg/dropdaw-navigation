@@ -9,7 +9,6 @@
 @mixin submenu {
   position: absolute;
   top: 3rem;
-  padding: 1.5rem;
   border-radius: variables.$global-radius;
   background-color: white;
   box-shadow: 0 1rem 2rem hsl(0, 0%, 41%, 0.2);
